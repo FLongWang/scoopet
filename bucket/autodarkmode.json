@@ -3,7 +3,7 @@
     "homepage": "https://github.com/AutoDarkMode/Windows-Auto-Night-Mode",
     "description": "Switches between the dark and light theme of Windows at scheduled times.",
     "license": "GPL-3.0",
-    "url": "https://github.com/AutoDarkMode/Windows-Auto-Night-Mode/releases/download/10.4.1.1/AutoDarkModeX_10.4.1.1.exe",
+    "url": "https://github.com/AutoDarkMode/Windows-Auto-Night-Mode/releases/download/10.4.1.1/AutoDarkModeX_10.4.1.1.exe#/dl.7z",
     "hash": "700032a3ceb02aa536e8a3671b72b9bcefa5c70d9d71f516f6d9d9af5be6a326",
     "innosetup": false,
     "bin": "AutoDarkModeShell.exe",
@@ -18,6 +18,6 @@
         "regex": "\"tag_name\": \"([\\d.])+"
     },
     "autoupdate": {
-        "url": "https://github.com/AutoDarkMode/Windows-Auto-Night-Mode/releases/download/$version/AutoDarkModeX_$version.exe"
+        "url": "https://github.com/AutoDarkMode/Windows-Auto-Night-Mode/releases/download/$version/AutoDarkModeX_$version.exe#/dl.7z"
     }
 }
