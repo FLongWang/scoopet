@@ -3,7 +3,7 @@
     "homepage": "https://github.com/stefankueng/BowPad/",
     "license": "GPL-3.0 license",
     "description": "A simple and fast text editor with a ribbon UI. (Highly Recommended)",
-    "url": "https://github.com/stefankueng/BowPad/releases/download/2.8.9/BowPad64-2.8.9.msi#dl.7z",
+    "url": "https://github.com/stefankueng/BowPad/releases/download/2.8.9/BowPad64-2.8.9.msi",
     "hash": " fa5bdc25f900b8431268014d96303e60dbda816304edc70caa2507b0011b3046",
     "bin": "BowPad.exe",
     "shortcuts": [
@@ -22,6 +22,6 @@
         "regex": "BaiduNetdisk_(\\d+.\\d+.\\d+.\\d+).exe"
     },
     "autoupdate": {
-        "url": "https://github.com/stefankueng/BowPad/releases/download/$version/BowPad64-$version.msi#dl.7z"
+        "url": "https://github.com/stefankueng/BowPad/releases/download/$version/BowPad64-$version.msi"
     }
 }
