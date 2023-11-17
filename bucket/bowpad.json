@@ -13,8 +13,6 @@
         ]
     ],
     "persist": "users",
-    "post_install": [
-    ],
     "checkver": {
         "url": "https://github.com/stefankueng/BowPad/",
     },
