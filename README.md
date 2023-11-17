@@ -17,7 +17,7 @@ A Bucket for the Best Windows Package Manager [Scoop](https://github.com/ScoopIn
 For ones familiar with Scoop:
 
 ```powershell
-scoop bucket add scoopet https://github.com/ivaquero/scoopet
+scoop bucket add myscoop https://github.com/FLongWang/scoopet.git
 ```
 
 # :running: To Start
@@ -33,13 +33,12 @@ Set-ExecutionPolicy RemoteSigned -scope CurrentUser
 ### :gear: Step 2: Download and install Scoop
 
 ```powershell
-irm get.scoop.sh -outfile 'install.ps1'
-.\install.ps1 -ScoopDir ['Scoop_Path'] -ScoopGlobalDir ['GlobalScoopApps_Path'] -NoProxy
-# for example
-.\install.ps1 -ScoopDir 'C:\Scoop' -ScoopGlobalDir 'C:\Program Files' -NoProxy
+$env:SCOOP='D:\Scoop'
+[Environment]::SetEnvironmentVariable('SCOOP',$env:SCOOP,'User')
+iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
 ```
 
-> If you skip this step, all user installed Apps and Scoop itself will live in `c:/users/user_name/scoop`.
+> If you skip this step, all user installed Apps and Scoop itself will live in `D:\Scoop`.
 
 ### :book: Step 3: Glance at quick-start by `scoop help`
 
@@ -68,7 +67,7 @@ scoop config aria2-enabled false
 ### :airplane: Step 3: Add this wonderful bucket and update, mo-mo-da~ :kiss:
 
 ```powershell
-scoop bucket add scoopet https://github.com/ivaquero/scoopet
+scoop bucket add myscoop https://github.com/FLongWang/scoopet.git
 scoop update
 ```
 
@@ -119,79 +118,17 @@ scoop config aria2-max-connection-per-server 16
 scoop config aria2-min-split-size 4M
 ```
 
-## :star: Summary
+## :star: Recommendation
 
 ### Research Tools
+```powershell
+scoop config aria2-enabled false
+scoop bucket add myscoop https://github.com/FLongWang/scoopet.git
+scoop install sudo
+sudo scoop install 7zip openssh main/git --global
+scoop install aria2 curl grep sed less touch
+scoop install gow cmder winpython extras/obsidian extras/zotero extras/avogadro2 extras/docear  extras/jabref extras/sumatrapdf extras/github extras/irfanview main/ffmpeg extras/ffmpeg-batch extras/vscode extras/potplayer extras/vncviewer myscoop/autodarkmode
+scoop install myscoop/texlive
+scoop install extras/wechat myscoop/tim
+```
 
-|       App        | Auto-Update ? |                       Original ?                       |
-| :--------------: | :-----------: | :----------------------------------------------------: |
-|     KingDraw     |       √       |                           √                            |
-| Mendeley-Desktop |       √       |                           √                            |
-|     NetLogo      |       √       |                           √                            |
-|      Spyder      |       √       |                           √                            |
-|     TeXLive      |       √       | modified [dorado](https://github.com/chawyehsu/dorado) |
-
-### Development Auxiliary
-
-|          App           | Auto-Update ? |                            Original ?                            |
-| :--------------------: | :-----------: | :--------------------------------------------------------------: |
-|      AutoDarkMode      |       √       |                                √                                 |
-|        ChatBox         |       √       |                                √                                 |
-|   Clash-for-Windows    |       √       |    copied from [dorado](https://github.com/chawyehsu/dorado)     |
-|     FileCentipede      |       √       |                         √ (by @CronusLM)                         |
-|    LKY-Officetools     |       √       |     copied from [DoveBoy](hhttps://github.com/DoveBoy/Apps)      |
-|      N-m3u8DL-RE       |       √       |                                √                                 |
-|      RectangleWin      |       √       |                                √                                 |
-|         Viber          |       √       | copied from [ScoopMaster](https://github.com/okibcn/ScoopMaster) |
-|         WinRAR         |       √       |                                √                                 |
-|      WiseCare365       |       √       |                                √                                 |
-| VMware-Workstation-Pro |       √       |    modified [Ash258](https://github.com/Ash258/Scoop-Ash258)     |
-
-### Opensource Mirrors
-
-|      App       | Auto-Update ? | Original ? |
-| :------------: | :-----------: | :--------: |
-|   Blender-cn   |       √       |     √      |
-|   FreeCAD-cn   |       √       |     √      |
-|     Git-cn     |       √       |     √      |
-|    GIMP-cn     |       √       |     √      |
-|  Inkscape-cn   |       √       |     √      |
-|    Julia-cn    |       √       |     √      |
-| LibreOffice-cn |       √       |     √      |
-|     LyX-cn     |       √       |     √      |
-| Mambaforge-cn  |       √       |     √      |
-|  Miniconda-cn  |       √       |     √      |
-| OBS-Studio-cn  |       √       |     √      |
-|   Octave-cn    |       √       |     √      |
-|  SageMath-cn   |       √       |     √      |
-|  TeXStudio-cn  |       √       |     √      |
-|     VLC-cn     |       √       |     √      |
-|  VSCodium-cn   |       √       |     √      |
-
-### Mainly for Chinese
-
-|         App         | Auto-Update ? |                        Original ?                         |
-| :-----------------: | :-----------: | :-------------------------------------------------------: |
-|       ADrive        |       √       |                             √                             |
-|    BaiduNetDisk     |       √       |                             √                             |
-|      CAJViewer      |       √       |                    √ (by @rayinfinite)                    |
-|     CNKIExpress     |       √       |                    √ (by @rayinfinite)                    |
-|      DingTalk       |       √       |                             √                             |
-|       DownKyi       |       √       |                     √ (by @CronusLM)                      |
-|    DiskGenius-cn    |       √       |                     √ (by @CronusLM)                      |
-|      Edgeless       |       √       |                    √ (by @IsaacWangTT)                    |
-|      EDrawMax       |       √       |                             √                             |
-|        Eudic        |       √       |                             √                             |
-|       Feishu        |       √       |                             √                             |
-|      LX-Music       |       √       |                             √                             |
-|   M3u8-Downloader   |       √       |                             √                             |
-|    NetEaseMusic     |       √       |                     √ (by @CronusLM)                      |
-| Partition-Assistant |       √       |                             √                             |
-|     Tencent-Edu     |       √       |                             √                             |
-|   Tencent-Meeting   |   3.5.6.416   |                     √ (by @Ryanjiena)                     |
-|       Ting-En       |       √       |                             √                             |
-|       uTools        |       √       | copied from [dorado](https://github.com/chawyehsu/dorado) |
-|       Weasel        |       √       |                             √                             |
-|     WeChatWork      |       √       |                             √                             |
-|    WPSOffice-cn     |       √       |                             √                             |
-|        Yuque        |       √       | copied from [dorado](https://github.com/chawyehsu/dorado) |
